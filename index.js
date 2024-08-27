@@ -1,8 +1,8 @@
 function encriptar() {
     let texto = document.getElementById("texto").value;
-    /* let tituloMensaje = document.getElementById("titulo-mensaje");
+    let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
-    let personaje = document.getElementById("personaje"); */
+    let personaje = document.getElementById("personaje"); 
 
 
     let textoCifrado = texto
@@ -12,13 +12,40 @@ function encriptar() {
     .replace(/o/gi, "ober")
     .replace(/u/gi, "ufat");
 
-    if (document.getElementById("texto").value.length !=0) {
+    if (texto.length !=0) {
         document.getElementById("texto").value = textoCifrado;
-        document.getElementById("titulo-mensaje") ="Texto encriptado con éxito";
-        document.getElementById("parrafo") ="";
-        document.getElementById("personaje").src ="./img/encriptado.png";
+        tituloMensaje.textContent ="Texto encriptado con éxito";
+        parrafo.textContent ="";
+        personaje.src ="./img/encriptado.png";
     } else {
-        document.getElementById("personaje").src ="./img/desencriptado.png";
-        alert("Debes ingresar algún texto");
+        personaje.src ="./img/muñeco.png";
+        tituloMensaje ="Ningún mensaje fue encontrado"
+        parrafo.textContent ="Ingresa el texto que deseas encriptar o desencriptar"
+        swal("Oops!","Dbes ingresar un texto", "warning");
+    }
+}
+function desencriptar() {
+    let texto =document.getElementById("texto").value;
+    let tituloMensaje = document.getElementById("titulo-mensaje");
+    let parrafo = document.getElementById("parrafo");
+    let personaje = document.getElementById("personaje"); 
+
+    let textoCifrado = texto
+    .replace(/enter/gi, "e")
+    .replace(/imes/gi, "i")
+    .replace(/ai/gi, "a")
+    .replace(/ober/gi, "o")
+    .replace(/ufat/gi, "u");
+    
+    if(texto.length !=0) {
+        document.getElementById("texto").value = textoCifrado;
+        tituloMensaje.textContent ="Texto desencriptado con éxito";
+        parrafo.textContent ="";
+        personaje.src ="./img/desencriptado.png";
+    } else {
+        personaje.src ="./img/muñeco.png";
+        tituloMensaje ="Ningún mensaje fue encontrado"
+        parrafo.textContent ="Ingresa el texto que deseas encriptar o desencriptar"
+        swal("Oops!","Dbes ingresar un texto", "warning");
     }
 }
