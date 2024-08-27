@@ -41,7 +41,7 @@ function desencriptar() {
         document.getElementById("texto").value = textoCifrado;
         tituloMensaje.textContent ="Texto desencriptado con éxito";
         parrafo.textContent ="";
-        personaje.src ="./img/desencriptado.png";
+        personaje.src ="./img/desencriptar.png";
     } else {
         personaje.src ="./img/muñeco.png";
         tituloMensaje ="Ningún mensaje fue encontrado"
